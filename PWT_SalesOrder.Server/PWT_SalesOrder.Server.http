@@ -1,0 +1,6 @@
+@PWT_SalesOrder.Server_HostAddress = http://localhost:5163
+
+GET {{PWT_SalesOrder.Server_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
