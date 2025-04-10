@@ -74,6 +74,11 @@ http://localhost:5000
 3. Ubah `Server`, `Database`, `User Id`, dan `Password` sesuai kebutuhan.
 
 ---
+## 📥 Download Build dari GitHub Releases
+
+Anda juga dapat mengunduh versi build terbaru dari proyek ini melalui bagian [Releases](https://github.com/FarisFreak/PWT_SalesOrder/releasess) di GitHub.
+
+---
 
 ## 📁 Catatan Build
 
