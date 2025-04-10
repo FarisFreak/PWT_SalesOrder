@@ -26,4 +26,13 @@
     </ProjectReference>
   </ItemGroup>
 
+	<Target Name="CopyVueDist" AfterTargets="Publish">
+		<Exec WorkingDirectory="$(SpaRoot)" Command="npm install" />
+		<Exec WorkingDirectory="$(SpaRoot)" Command="npm run build" />
+		<ItemGroup>
+			<DistFiles Include="$(SpaRoot)\dist\**\*" />
+		</ItemGroup>
+		<Copy SourceFiles="@(DistFiles)" DestinationFolder="$(PublishDir)wwwroot\%(RecursiveDir)" />
+	</Target>
+
 </Project>
