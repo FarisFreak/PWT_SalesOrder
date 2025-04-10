@@ -6,6 +6,8 @@ import type { IOrder, IResult } from '@/models';
 import { Format } from '@/helpers/format';
 import { useConfirm, useToast } from 'primevue';
 
+const dt = ref();
+
 const keyword = ref<string>("");
 const date = ref<Date>(null);
 const savedKeyword = ref<string>("");
@@ -77,6 +79,10 @@ const refresh = () => {
     search(true);
 }
 
+const exportCSV = () => {
+    dt.value.exportCSV();
+};
+
 onMounted(async () => {
   const result = await fetchWrapper.get('/api/Sales') as IResult<IOrder>;
   if (result.status){
@@ -115,12 +121,12 @@ onMounted(async () => {
         </Card>
         <Card>
           <template #content>
-            <DataTable :value="orders" paginator :rows="5" :rowsPerPageOptions="[5, 10, 20, 50]" tableStyle="min-width: 50rem">
+            <DataTable ref="dt" :value="orders" paginator :rows="5" :rowsPerPageOptions="[5, 10, 20, 50]" tableStyle="min-width: 50rem">
               <template #header>
                 <div class="flex flex-wrap items-center justify-between gap-2">
                   <div class="flex gap-2">
                     <Button label="Add New Data" @click="goAdd()"/>
-                    <Button label="Export" />
+                    <Button label="Export" @click="exportCSV"/>
                   </div>
                   <Button label="Hints" />
                 </div>
