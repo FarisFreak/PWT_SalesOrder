@@ -40,7 +40,8 @@ const deleteData = async (data: IOrder) => {
       outlined: true
     },
     acceptProps: {
-      label: 'Save'
+      label: 'Delete',
+      severity: 'danger'
     },
     accept: async () => {
       const result = await fetchWrapper.delete('/api/Sales', data);
