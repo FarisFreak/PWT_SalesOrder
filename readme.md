@@ -76,7 +76,7 @@ http://localhost:5000
 ---
 ## 📥 Download Build dari GitHub Releases
 
-Anda juga dapat mengunduh versi build terbaru dari proyek ini melalui bagian [Releases](https://github.com/FarisFreak/PWT_SalesOrder/releasess) di GitHub.
+Anda juga dapat mengunduh versi build terbaru dari proyek ini melalui bagian [Releases](https://github.com/FarisFreak/PWT_SalesOrder/releases) di GitHub.
 
 ---
 
