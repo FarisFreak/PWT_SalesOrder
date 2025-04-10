@@ -197,8 +197,8 @@ onMounted(async () => {
             <DataTable :value="newData.items" tableStyle="min-width: 50rem">
               <template #header>
                 <div class="flex flex-wrap items-center justify-between gap-2">
-                  <Button label="Add Item" @click="dialogItem.Visible.value = true" />
-                  <Button label="Hints" />
+                  <Button label="Add Item" icon="pi pi-plus" iconPos="left" @click="dialogItem.Visible.value = true" />
+                  <Button label="Hints" :hidden="true"/>
                 </div>
               </template>
               <Column field="name" header="Item Name" style="width: calc(100%/5)"></Column>
@@ -216,8 +216,8 @@ onMounted(async () => {
               <Column header="Action" style="width: calc(100%/5)">
                 <template #body="{ data }">
                   <div class="flex gap-2">
-                    <Button label="Edit" @click="dialogItem.Edit(data)" />
-                    <Button label="Delete" @click="dialogItem.Delete(data)" />
+                    <Button icon="pi pi-pencil" size="small" severity="warn"  @click="dialogItem.Edit(data)" />
+                    <Button icon="pi pi-trash" size="small" severity="danger" @click="dialogItem.Delete(data)" />
                   </div>
                 </template>
               </Column>
@@ -240,8 +240,8 @@ onMounted(async () => {
     </template>
     <template #footer>
       <div class="flex gap-4 mt-1">
-        <Button label="Cancel" severity="secondary" outlined class="w-full" @click="goBack"/>
-        <Button label="Save" class="w-full" @click="saveOrder" :disabled="disableSaveOrder" />
+        <Button label="Cancel" icon="pi pi-times" iconPos="left" severity="secondary" outlined class="w-full" @click="goBack"/>
+        <Button label="Save" icon="pi pi-save" iconPos="left" class="w-full" @click="saveOrder" :disabled="disableSaveOrder" />
       </div>
     </template>
   </Card>

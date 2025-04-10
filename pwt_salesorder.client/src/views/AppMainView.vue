@@ -114,7 +114,7 @@ onMounted(async () => {
                 </div>
               </div>
               <div class="flex justify-end">
-                <Button label="Search" @click="search()"/>
+                <Button label="Search" @click="search()" icon="pi pi-search" iconPos="left"/>
               </div>
             </div>
           </template>
@@ -125,10 +125,10 @@ onMounted(async () => {
               <template #header>
                 <div class="flex flex-wrap items-center justify-between gap-2">
                   <div class="flex gap-2">
-                    <Button label="Add New Data" @click="goAdd()"/>
-                    <Button label="Export" @click="exportCSV"/>
+                    <Button label="Add Order" @click="goAdd()" icon="pi pi-plus" iconPos="left"/>
+                    <Button label="Export" @click="exportCSV"  icon="pi pi-file-export" iconPos="left"/>
                   </div>
-                  <Button label="Hints" />
+                  <Button label="Hints" :hidden="true"/>
                 </div>
               </template>
               <Column field="id" header="No"></Column>
@@ -142,8 +142,8 @@ onMounted(async () => {
               <Column header="Action" style="width: 100px">
                 <template #body="{ data }">
                   <div class="flex gap-2">
-                    <Button label="Edit" @click="goEdit(data)" />
-                    <Button label="Delete" @click="deleteData(data)" />
+                    <Button icon="pi pi-pencil" size="small" severity="warn" @click="goEdit(data)" />
+                    <Button icon="pi pi-trash" size="small" severity="danger" @click="deleteData(data)" />
                   </div>
                 </template>
               </Column>
